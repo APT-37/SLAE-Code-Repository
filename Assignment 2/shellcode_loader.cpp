@@ -15,7 +15,7 @@
 
 int main(int argc, char* argv[])
 {
-	unsigned char* shellcode_hex = (unsigned char*)argv[1];
+    unsigned char* shellcode_hex = (unsigned char*)argv[1];
     const char *buffer = (const char *)shellcode_hex;
     int shellcode_length = strlen((const char *)shellcode_hex);
     unsigned char *shellcode = (unsigned char *)calloc(shellcode_length / 2, sizeof(unsigned char));
@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
         sscanf(buffer, "%2hhx", &shellcode[count]);
         buffer += 2;
     }
-	printf("The Shellcode Length is:  %d\n", strlen((const char*)shellcode));
-	int (*ret)() = (int(*)())shellcode;
-	ret();
+    printf("The Shellcode Length is:  %d\n", strlen((const char*)shellcode));
+    int (*ret)() = (int(*)())shellcode;
+    ret();
 }
