@@ -1,6 +1,6 @@
 #!/bin/bash
 # Name: compile.sh
-# Author: Upayan a.k.a slaeryan
+# Author: Upayan a.k.a slaeryan (Script made by course instructor Vivek Ramachandran)
 # SLAE: 1525
 # Contact: upayansaha@icloud.com
 # Purpose: The program takes a nasm source file as console input from user and 
@@ -17,6 +17,3 @@ echo '[+] Linking with ld ...'
 ld -s -o $1 $1.o
 
 echo '[+] Done!'
-
-
-
