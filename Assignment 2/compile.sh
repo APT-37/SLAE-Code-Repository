@@ -8,10 +8,11 @@
 # finally spit out the ELF executable.
 # Run with:
 # ./compile.sh <nasmsourcefile>
+# Note: Currently configured for C2_IP = 192.168.1.104 C2_PORT = 8080
 # To use libc change ld to gcc and in nasm source file change entrypoint to main
 
 echo '[+] Assembling with nasm ... '
-nasm -f elf32 -o $1.o $1.nasm
+nasm -f elf32 -o $1.o -DC2_IP=0x6801a8c0 -DC2_PORT=0x901f $1.nasm
 
 echo '[+] Linking with ld ...'
 ld -s -o $1 $1.o
