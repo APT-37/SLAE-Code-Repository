@@ -20,7 +20,7 @@ _start:
 
     ; Function to skip to next page
     turn_page:             
-    or dx, 0xfff           ; Bitwise OR of DX value - To load 4095 in DX
+    or dx, 0xfff           ; Bitwise OR of current DX value with 0xfff
 
     ; Function to check whether the following 8 bytes of memory page is accessible or not
     check_page:
