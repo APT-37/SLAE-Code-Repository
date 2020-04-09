@@ -26,7 +26,7 @@ def main():
 			if(len(byte)==3):
 				byte = byte[:2] + '0' + byte[2:]
 			byte = byte[2:]
-			print(byte)
+			#print(byte)
 			encoded_shellcode = encoded_shellcode + byte
 			byte = ''
 		else:
